@@ -8,6 +8,13 @@
       "when": 1752274944398,
       "tag": "0000_wandering_kid_colt",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1752442256720,
+      "tag": "0001_steady_lilith",
+      "breakpoints": true
     }
   ]
 }

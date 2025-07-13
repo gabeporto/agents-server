@@ -2,6 +2,9 @@ import { reset, seed } from "drizzle-seed";
 import { db, sql } from "./connection.ts";
 import { schema } from "./schema/index.ts";
 
+await db.delete(schema.questions);
+await db.delete(schema.rooms);
+
 await reset(db, { schema });
 
 await seed(db, schema).refine((f) => {
@@ -10,8 +13,11 @@ await seed(db, schema).refine((f) => {
             count: 20,
             columns: {
                 name: f.companyName(),
-                description: f.loremIpsum(),
+                description: f.loremIpsum()
             }
+        },
+        questions: {
+            count: 20
         }
     }
 });
