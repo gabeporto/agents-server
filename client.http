@@ -44,3 +44,14 @@ Content-Type: application/json
     "question": "What is the capital of France?",
     "answer": "Paris"
 }
+
+###
+
+# Get room by ID
+# @name getRoomById
+GET {{baseUrl}}/rooms/{{roomId}}
+Content-Type: application/json  
+
+{
+    "roomId": "5186ff26-2acf-4842-ba7b-97235e128451",
+}
