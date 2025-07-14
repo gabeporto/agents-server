@@ -16,7 +16,7 @@ export const getRoomRoute: FastifyPluginCallbackZod = (app) => {
         async (request) => {
             const { roomId } = request.params;
 
-            const results = await db
+            const result = await db
             .select({
                 id: schema.rooms.id,
                 name: schema.rooms.name,
@@ -26,7 +26,7 @@ export const getRoomRoute: FastifyPluginCallbackZod = (app) => {
             .from(schema.rooms)
             .where(eq(schema.rooms.id, roomId));
 
-            return results;
+            return result ? result[0] : null;
         }
     );
 };
